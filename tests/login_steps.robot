@@ -1,43 +1,36 @@
 *** Settings ***
-Library    SeleniumLibrary
 Resource    ../resources/login_keywords.resource
-Test Setup    Open Browser  browser=chrome
-
-*** Variables ***
-${URL}    https://www.saucedemo.com/ 
-${BROWSER}    chrome
-${USERNAME}    standard_user
-${PASSWORD}    secret_sauce
+Suite Setup    Open Browser  browser=chrome
 
 *** Test Cases ***
 Successful Login
-    I navigate to the login page   ${URL}   
-    Input correct credentials    ${USERNAME}    ${PASSWORD}
+    I navigate to the login page     
+    Input correct credentials    
     I click on the Login Button
     I am able view the home page    
 
 Unsuccessful Login - No credentials
-    I navigate to the login page   ${URL}  
+    I navigate to the login page   
     Wait Until Element Is Visible    id=user-name
     I click on the Login Button
-    Wait Until Element Contains    class=error-message-container   Epic sadface: Username is required
+    I am able to see the expected error message for No Credentials
 
 
 Unsuccessful Login - No Username
-    I navigate to the login page   ${URL}  
-    Input credentials no Username    ${PASSWORD}
+    I navigate to the login page   
+    Input credentials no Username    
     I click on the Login Button
-    Wait Until Element Contains    class=error-message-container   Epic sadface: Username is require
+    I am able to see the expected error message for No Username
 
 
 Unsuccessful Login - No Password
-    I navigate to the login page   ${URL}  
-    Input credentials no Password    ${USERNAME}
+    I navigate to the login page   
+    Input credentials no Password  
     I click on the Login Button  
-    Wait Until Element Contains    class=error-message-container   Epic sadface: Password is required
+    I am able to see the expected error message for No Password
 
 Unsuccessful Login - Wrong Credentials
-    I navigate to the login page   ${URL}  
+    I navigate to the login page   
      Input Wrong Credentials
      I click on the Login Button 
-    Wait Until Element Contains    class=error-message-container   Epic sadface: Username and password do not match any user in this service
+   I am able to see the expected error message for Wrong Credentials
