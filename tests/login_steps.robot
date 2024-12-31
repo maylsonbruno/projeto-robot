@@ -7,13 +7,15 @@ Successful Login
     I navigate to the login page     
     Input correct credentials    
     I click on the Login Button
-    I am able view the home page    
+    I am able view the home page 
+    Sleep    1   
 
 Unsuccessful Login - No credentials
     I navigate to the login page   
     Wait Until Element Is Visible    id=user-name
     I click on the Login Button
     I am able to see the expected error message for No Credentials
+    Sleep    1
 
 
 Unsuccessful Login - No Username
@@ -21,6 +23,7 @@ Unsuccessful Login - No Username
     Input credentials no Username    
     I click on the Login Button
     I am able to see the expected error message for No Username
+    Sleep    1
 
 
 Unsuccessful Login - No Password
@@ -28,6 +31,7 @@ Unsuccessful Login - No Password
     Input credentials no Password  
     I click on the Login Button  
     I am able to see the expected error message for No Password
+    Sleep    1
 
 Unsuccessful Login - Wrong Credentials
     I navigate to the login page   

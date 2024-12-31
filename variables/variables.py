@@ -19,6 +19,9 @@ ERROR_MENSAGE ={
 URL_DATA = {
     "baseUrl":"https://www.saucedemo.com",
     "inventoryUrl":"/inventory.html",
-    "cartUrl":"/cart.html"
+    "cartUrl":"/cart.html",
+    "checkoutStepOne":"/checkout-step-one.html",
+    "checkoutStepTwo":"/checkout-step-two.html",
+    "checkoutComplete":"/checkout-complete.html"
 
 }
